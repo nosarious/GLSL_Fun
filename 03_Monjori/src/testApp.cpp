@@ -47,6 +47,16 @@ void testApp::setup(){
     gui = new ofxUICanvas(0, 0, length+xInit, ofGetHeight());
     
     gui->addWidgetDown(new ofxUILabel("Shader Vars", OFX_UI_FONT_LARGE));  
+    
+    	// "name", minimum, maximum , (variable), width , height
+	gui->addWidgetDown( new ofxUISlider( "E", -255, 512.0, e_factor , 160, dim));//160 , dim , 50.0f, 950.0f, e_factor));
+	gui->addWidgetDown( new ofxUISlider("F", 0, 512.0, f_factor, 160,dim));
+	gui->addWidgetDown( new ofxUISlider("I", -255, 255., i_factor, 160,dim));
+	gui->addWidgetDown( new ofxUISlider("D",  0.0, 255.0, d_factor, 160,dim));
+	gui->addWidgetDown( new ofxUISlider("Time",1.0f , 3000.0f, timeFactor, 160,dim));
+	gui->addWidgetDown( new ofxUISlider("VolumeScale", 1000.0f , 12000.0f, volumeScale, 160,dim));
+    
+    /*
     gui->addWidgetDown( new ofxUISlider( 160 , dim , 50.0f, 950.0f, e_factor  , "E")); 
     gui->addWidgetDown( new ofxUISlider(160,dim , 50.0f, 3050.0f, f_factor  , "F")); 
     gui->addWidgetDown( new ofxUISlider(160,dim , 50.0f, 3050.0f, i_factor  , "I")); 
